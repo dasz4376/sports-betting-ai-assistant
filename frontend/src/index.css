@@ -1,0 +1,625 @@
+@import "tailwindcss";
+
+/* ============================================
+   AUTONOMI AI - NFL BETTING ASSISTANT
+   Premium Dark Theme with Neon Accents
+   ============================================ */
+
+/* Custom theme colors */
+@theme {
+  --color-nfl-blue: #013369;
+  --color-nfl-red: #D50A0A;
+  --color-betting-green: #00ff88;
+  --color-betting-red: #ff4757;
+  --color-accent-gold: #ffd700;
+  --color-accent-purple: #a855f7;
+  --color-dark-bg: #0a0e17;
+  --color-dark-card: #111827;
+  --color-dark-border: #1f2937;
+  --color-dark-hover: #1a2332;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-dark-bg);
+  color: #e5e7eb;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================
+   GLASSMORPHISM EFFECTS
+   ============================================ */
+
+.glass {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-strong {
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.9) 0%, rgba(31, 41, 55, 0.7) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   GRADIENT TEXT STYLES
+   ============================================ */
+
+.gradient-text {
+  background: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-fire {
+  background: linear-gradient(135deg, #ff4757 0%, #ff6b81 50%, #ffa502 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   NEON GLOW EFFECTS
+   ============================================ */
+
+.neon-green {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3), 
+              0 0 40px rgba(0, 255, 136, 0.1),
+              inset 0 0 20px rgba(0, 255, 136, 0.05);
+}
+
+.neon-blue {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 
+              0 0 40px rgba(0, 212, 255, 0.1);
+}
+
+.neon-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3), 
+              0 0 40px rgba(168, 85, 247, 0.1);
+}
+
+.neon-gold {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3), 
+              0 0 40px rgba(255, 215, 0, 0.1);
+}
+
+/* Subtle glow on hover */
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+  border-color: rgba(0, 255, 136, 0.3);
+}
+
+/* ============================================
+   ANIMATED BACKGROUNDS
+   ============================================ */
+
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at top, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+              radial-gradient(ellipse at bottom right, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+              var(--color-dark-bg);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; box-shadow: 0 0 20px rgba(0, 255, 136, 0.3); }
+  50% { opacity: 0.8; box-shadow: 0 0 40px rgba(0, 255, 136, 0.5); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+
+.animate-slide-left {
+  animation: slide-in-left 0.3s ease-out;
+}
+
+.animate-slide-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-ticker {
+  animation: ticker 40s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Staggered animations */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+
+.btn-primary {
+  background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+  color: #0a0e17;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #e5e7eb;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(0, 255, 136, 0.3);
+}
+
+.btn-chip {
+  background: rgba(255, 255, 255, 0.03);
+  color: #9ca3af;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-chip:hover {
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+  border-color: rgba(0, 255, 136, 0.3);
+}
+
+/* ============================================
+   CARD STYLES
+   ============================================ */
+
+.card {
+  background: var(--color-dark-card);
+  border: 1px solid var(--color-dark-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(0, 255, 136, 0.2);
+  transform: translateY(-2px);
+}
+
+.card-stat {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.card-parlay {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(0, 212, 255, 0.1) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 16px;
+}
+
+.card-win {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.15) 0%, rgba(16, 185, 129, 0.1) 100%);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.card-loss {
+  background: linear-gradient(135deg, rgba(255, 71, 87, 0.15) 0%, rgba(239, 68, 68, 0.1) 100%);
+  border: 1px solid rgba(255, 71, 87, 0.3);
+}
+
+/* Game Cards for ticker */
+.game-card {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.8) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.game-card:hover {
+  border-color: rgba(0, 255, 136, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 255, 136, 0.15);
+}
+
+/* ============================================
+   PARLAY PICK STYLES
+   ============================================ */
+
+.pick-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.pick-item:hover {
+  background: rgba(0, 255, 136, 0.05);
+  border-color: rgba(0, 255, 136, 0.2);
+}
+
+.pick-line {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-weight: 700;
+  color: #00ff88;
+}
+
+.pick-player {
+  font-weight: 600;
+  color: #f3f4f6;
+}
+
+.pick-stat {
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+/* ============================================
+   MESSAGE BUBBLES
+   ============================================ */
+
+.message-user {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  border-radius: 20px 20px 4px 20px;
+}
+
+.message-assistant {
+  background: var(--color-dark-card);
+  border: 1px solid var(--color-dark-border);
+  border-radius: 20px 20px 20px 4px;
+}
+
+/* ============================================
+   SIDEBAR STYLES
+   ============================================ */
+
+.sidebar {
+  background: linear-gradient(180deg, var(--color-dark-card) 0%, var(--color-dark-bg) 100%);
+  border-right: 1px solid var(--color-dark-border);
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border-radius: 10px;
+  color: #9ca3af;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f3f4f6;
+}
+
+.sidebar-item.active {
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+/* ============================================
+   TICKER STYLES
+   ============================================ */
+
+.ticker-container {
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid var(--color-dark-border);
+}
+
+.ticker-content {
+  display: flex;
+  gap: 3rem;
+  padding: 0.75rem 0;
+  white-space: nowrap;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.ticker-team {
+  font-weight: 600;
+  color: #f3f4f6;
+}
+
+.ticker-vs {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+.ticker-time {
+  color: #00ff88;
+  font-family: monospace;
+}
+
+/* ============================================
+   INPUT STYLES
+   ============================================ */
+
+.input-chat {
+  background: var(--color-dark-card);
+  border: 1px solid var(--color-dark-border);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  color: #f3f4f6;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+  resize: none;
+}
+
+.input-chat:focus {
+  outline: none;
+  border-color: rgba(0, 255, 136, 0.5);
+  box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+}
+
+.input-chat::placeholder {
+  color: #4b5563;
+}
+
+/* ============================================
+   BADGE STYLES
+   ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-green {
+  background: rgba(0, 255, 136, 0.15);
+  color: #00ff88;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.badge-red {
+  background: rgba(255, 71, 87, 0.15);
+  color: #ff4757;
+  border: 1px solid rgba(255, 71, 87, 0.3);
+}
+
+.badge-gold {
+  background: rgba(255, 215, 0, 0.15);
+  color: #ffd700;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.badge-purple {
+  background: rgba(168, 85, 247, 0.15);
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* ============================================
+   STAT DISPLAY
+   ============================================ */
+
+.stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00ff88;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   CONFIDENCE METER
+   ============================================ */
+
+.confidence-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.confidence-high {
+  background: linear-gradient(90deg, #00ff88 0%, #10b981 100%);
+}
+
+.confidence-medium {
+  background: linear-gradient(90deg, #ffd700 0%, #f59e0b 100%);
+}
+
+.confidence-low {
+  background: linear-gradient(90deg, #ff4757 0%, #ef4444 100%);
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+  
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    z-index: 100;
+    width: 280px;
+    height: 100vh;
+    transition: left 0.3s ease;
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+}
+
+/* ============================================
+   LOADING SKELETON
+   ============================================ */
+
+.skeleton {
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.05) 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
