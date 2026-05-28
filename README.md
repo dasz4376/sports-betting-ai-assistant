@@ -127,7 +127,6 @@ Use the pre-built buttons:
 ## 🏗️ Project Structure
 
 ```
-d:\Autonomi(My Last Chance)/
 ├── backend/                    # Python/FastAPI backend
 │   ├── services/
 │   │   ├── chat_ai_v3.py      # Gemini-powered chat
@@ -182,10 +181,7 @@ ODDS_API_KEY=your_odds_api_key_here  # Optional
 ```
 
 ### Frontend
-API URL is hardcoded in `src/App.tsx`. Change if deploying:
-```typescript
-const response = await fetch('http://localhost:8000/api/chat', {
-```
+API URL is hardcoded in `src/App.tsx`.
 
 ---
 
@@ -260,7 +256,7 @@ Update API URL in build to point to production backend.
 ## 🐛 Troubleshooting
 
 ### "Connection error" in frontend
-1. Check backend is running: `http://localhost:8000`
+1. Check backend is running
 2. Verify CORS is enabled (already configured)
 3. Check browser console for errors
 
@@ -335,5 +331,3 @@ For issues or questions:
 **Built with ❤️ for smart sports betting**
 
 **Stack:** Python • FastAPI • PostgreSQL • React • TypeScript • TailwindCSS • Machine Learning
-
-**Status:** ✅ Production Ready
