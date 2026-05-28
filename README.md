@@ -76,10 +76,6 @@ npm run dev
 
 ## 💬 Using the AI
 
-### Chat Interface
-
-Open http://localhost:5173 and start chatting!
-
 **Example Questions:**
 ```
 How will AJ Brown do against the Bears?
